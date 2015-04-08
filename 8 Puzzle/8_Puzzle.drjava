@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20120818-r5686">
+  <project autorefresh="false" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Solver.java" package="" timestamp="10-Mar-2014 22:24:53">
+        <select from="2737" to="2737"/>
+        <scroll column="1278" row="0"/>
+      </file>
+      <file name="SearchNode.java" package="" timestamp="08-Mar-2014 19:13:09">
+        <select from="2737" to="2737"/>
+        <scroll column="1278" row="0"/>
+      </file>
+      <file name="Board.java" package="" timestamp="10-Mar-2014 22:16:14">
+        <select from="2737" to="2737"/>
+        <scroll column="1278" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches>
+      <watch name="blankPos"/>
+      <watch name="b1"/>
+      <watch name="b2"/>
+      <watch name="blocks"/>
+    </watches>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

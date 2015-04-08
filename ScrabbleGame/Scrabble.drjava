@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20120818-r5686">
+  <project autorefresh="false" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Dictionary.java" package="" timestamp="17-Dec-2013 14:15:51">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="Hand.java" package="" timestamp="19-Oct-2013 19:50:51">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="BoardDirection.java" package="" timestamp="17-Nov-2013 22:28:22">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="Tile.java" package="" timestamp="17-Nov-2013 22:35:56">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="IHandleMouseEvent.java" package="" timestamp="26-Nov-2013 20:29:26">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="IHandleKeyPressedEvent.java" package="" timestamp="28-Nov-2013 11:52:57">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="WordValue.java" package="" timestamp="28-Nov-2013 13:44:39">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="WordFinder.java" package="" timestamp="28-Nov-2013 14:07:46">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="Board.java" package="" timestamp="17-Dec-2013 13:37:58">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="ScrabbleGraphics.java" package="" timestamp="17-Dec-2013 14:01:01">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+      <file name="ScrabbleGame.java" package="" timestamp="17-Dec-2013 14:09:37">
+        <select from="878" to="878"/>
+        <scroll column="380" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints>
+      <breakpoint enabled="true" file="ScrabbleGraphics.java" line="17"/>
+      <breakpoint enabled="true" file="ScrabbleGraphics.java" line="24"/>
+    </breakpoints>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
