@@ -13,13 +13,16 @@ public class ParticleSim
         Particle[] parts = new Particle[numParticles];
         for(int i = 0; i < numParticles; i++)
         {
+            double radius = StdRandom.uniform(0.01, 0.1);
+            double mass = Math.PI * (radius * radius);
+            
             parts[i] = new Particle(
                              StdRandom.uniform(0.2, 0.8), 
                              StdRandom.uniform(0.2, 0.8), 
                              StdRandom.uniform(-0.1, 0.1), 
                              StdRandom.uniform(-0.1, 0.1),
-                             StdRandom.uniform(0.01, 0.1),
-                             StdRandom.uniform(0.01, 0.1)
+                             radius,
+                             mass
                             );
         }
         
