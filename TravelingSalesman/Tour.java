@@ -68,28 +68,35 @@ public class Tour
     {
         Node next = new Node(p);
         
+        if (first == null){
+            first = next;
+            return;
+        }
+        
         Node index = first;
         double minDist = 0.0;
-        Node minNode = index;
+        Node smallest = index;
+        double dist = distance();
         while(index != null) {
-            if(index == next) continue;
-            
-            insertNode(next, index);
-            double dist = distance();
-            
-            if (dist < minDist || minDist == 0.0) {
-                minNode = index;
-                minDist = dist;
+            if(index != next) {
+                double distToNext = index.p.distance(next.p);
+                double distFromNext = 0.0;
+                if (index.next != null) 
+                    distFromNext = next.p.distance(index.next.p);
+                
+                double additionalDist = dist + distToNext + distFromNext;
+                double newDist = dist + additionalDist;
+                if (newDist < minDist || minDist == 0.0) {
+                    smallest = index;
+                    minDist = newDist;
+                }
             }
-            //removeNode(next);
             
             index = index.next;
         }
         
-        removeNode(next);
-        
-        if (minNode != null) {
-            insertNode(next, minNode);
+        if (smallest != null) {
+            insertNode(next, smallest);
         }
     }
     
@@ -100,6 +107,7 @@ public class Tour
         Node index = first;
         double closestDist = 0.0;
         Node closestNode = index;
+        
         while(index != null) {
             double dist = index.p.distance(next.p);
             if (dist < closestDist || closestDist == 0.0) {
@@ -120,30 +128,29 @@ public class Tour
     
     private void removeNode(Node n)
     {
-        if (n.next != null) {
-            Node orphan = n.next;
-            Node index = first;
-            while(index != null) {
-                if (index.next == null) break;
-                index = index.next;
-            }
-            index.next = orphan;
-            n.next = null;
+        // n is first
+        if (n == first && n.next != null) {
+            first = n.next;
+            return; // nothing else to due
         }
+        
+        
+        Node before = null;
+        Node index = first;
+        while(index != null) {
+            if (index.next == n) {
+                before = index;
+                break;
+            }
+            index = index.next;
+        }
+        
+        Node after = n.next;
+        if (before != null) before.next = after;
     }
     
     private void insertNode(Node middle, Node start)
     {
-        if (middle.next != null) {
-            Node orphan = middle.next;
-            Node index = first;
-            while(index != null) {
-                if (index.next == null) break;
-                index = index.next;
-            }
-            index.next = orphan;
-        }
-        
         Node end = start.next;
         start.next = middle;
         middle.next = end;
@@ -182,9 +189,9 @@ public class Tour
             
             tour.insertSmallest(p);
             
-            //StdDraw.clear();
-            //tour.draw();
-            //StdDraw.show(50);
+            StdDraw.clear();
+            tour.draw();
+            StdDraw.show(50);
         }
         
         tour.draw();
