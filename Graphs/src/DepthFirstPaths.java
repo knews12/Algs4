@@ -14,19 +14,34 @@ public class DepthFirstPaths<T>
         this.graph = graph;
         this.source = source;
         markedVertices = new HashMap<>();
+        markedVertices.put(this.source, null);
+        dfs(this.source);
     }
 
     public boolean hasPathTo(T vertex) { return markedVertices.containsKey(vertex); }
 
     public Iterable<T> pathTo(T vertex)
     {
+        Stack<T> path = new Stack<>();
 
+        if (!hasPathTo(vertex)) return path;
+
+        path.push(vertex);
+        T next = markedVertices.get(vertex);
+
+        while(next != source)
+        {
+            path.push(next);
+            next = markedVertices.get(next);
+        }
+
+        path.push(source);
+
+        return path;
     }
 
     private void dfs(T v)
     {
-        markedVertices.put(v, null);
-
         for (T w : graph.adjacentVertices(v))
         {
             markedVertices.put(w, v);

@@ -55,5 +55,11 @@ public class Graph<T>
         g.addEdge(1, 2);
 
         System.out.println("Number of edges: " + g.numberOfEdges());
+
+        DepthFirstPaths<Integer> dfp = new DepthFirstPaths<>(g, 0);
+        Iterable<Integer> path = dfp.pathTo(2);
+        for (Integer i: path) {
+            System.out.print(i + " -> ");
+        }
     }
 }
