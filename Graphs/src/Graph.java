@@ -8,8 +8,8 @@ import java.util.HashMap;
 
 public class Graph<T>
 {
-    private Map<T, List<T>> vertices;
-    private int edgeCount;
+    protected Map<T, List<T>> vertices;
+    protected int edgeCount;
 
     public Graph()
     {
@@ -29,23 +29,31 @@ public class Graph<T>
 
     public void addEdge(T v, T w)
     {
-        if (!vertices.containsKey(v))
-            vertices.put(v, new ArrayList());
+        ensureVertexExists(v);
+        ensureVertexExists(w);
 
-        List<T> edges = vertices.get(v);
-        if (!edges.contains(w))
+        List<T> vEdges = vertices.get(v);
+        List<T> wEdges = vertices.get(w);
+        if (!vEdges.contains(w))
         {
-            edges.add(w);
+            vEdges.add(w);
+            wEdges.add(v);
             edgeCount++;
         }
     }
 
     public Iterable<T> adjacentVertices(T v)
     {
-        if (vertices.containsKey(v))
+        if (vertices.containsKey(v)) {
             return vertices.get(v);
-        else
-            return new ArrayList<>();
+        }
+        else return new ArrayList<>();
+    }
+
+    protected void ensureVertexExists(T v) {
+        if (!vertices.containsKey(v)) {
+            vertices.put(v, new ArrayList());
+        }
     }
 
     public static void main(String[] args)
